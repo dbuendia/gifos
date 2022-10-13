@@ -20,7 +20,9 @@ function App() {
     setSearch(e.target.value);
   };
 
-  const handleSearchClick = (search) => {
+  const handleSearchClick = (search, e) => {
+    e.preventDefault();
+    setVisible(false);
     setInput(search);
   };
 
@@ -74,31 +76,39 @@ function App() {
           <div className="friends">
             <img src={friends} alt="friends" />
           </div>
-          {visible ? true : false}
-          <input
-            className={`${visible ? "visible-tags" : "hidden-tags"}`}
-            type="search"
-            placeholder="Busca un GIF"
-            value={search}
-            onChange={handleSearchInput}
-          />
-          <button
-            className={`btn btn-search ${
-              visible ? `visible-tags` : `hidden-tags`
-            }`}
-            onClick={() => handleSearchClick(search)}
-          >
-            <img src={lupa} className="lupa-icon" alt="lupa" />
-          </button>
+          <form>
+            <input
+              className={`${visible ? "visible-tags" : "hidden-tags"}`}
+              type="search"
+              placeholder="Busca un GIF"
+              value={search}
+              onChange={handleSearchInput}
+            />
+            <button
+              type="submit"
+              className={`btn btn-search ${
+                visible ? `visible-tags` : `hidden-tags`
+              }`}
+              onClick={(e) => handleSearchClick(search, e)}
+            >
+              <img src={lupa} className="lupa-icon" alt="lupa" />
+            </button>
+          </form>
           {visible && (
             <div className="dropdown">
               {/* Iteramos sobre el array de tags y las mostramos */}
-              {visible &&
-                tags.data.map((elem) => (
-                  <p key={elem.name} className="tag" onClick={handleTagClick}>
-                    {elem.name}
-                  </p>
-                ))}
+              <li>
+                {visible &&
+                  tags.data.map((elem) => (
+                    <ul
+                      key={elem.name}
+                      className="tag"
+                      onClick={handleTagClick}
+                    >
+                      {elem.name}
+                    </ul>
+                  ))}
+              </li>
             </div>
           )}
         </div>
