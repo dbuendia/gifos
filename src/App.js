@@ -7,6 +7,8 @@ import lupa from "./img/lupa.svg";
 import loadingIcon from "./img/oval-loader.svg";
 import friends from "./img/friends.svg";
 
+console.log("Hi javier 💋");
+
 function App() {
   const [search, setSearch] = useState("");
   const [input, setInput] = useState("");
