@@ -1,8 +1,10 @@
+import logo from "../img/logo.svg";
+
 const Header = () => {
   return (
     <header className="header">
-      <img className="logo" alt="logo" />
-      <button className="btn">Dark Mode</button>
+      <img src={logo} className="logo" alt="logo" />
+      <button className="btn btn-dark">Dark Mode</button>
     </header>
   );
 };

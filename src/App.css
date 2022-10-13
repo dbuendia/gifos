@@ -42,13 +42,12 @@ body {
 .header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 50px;
 }
 
 .logo {
-  background: var(--turquoise);
-  border-radius: 20px;
-  padding: 10px;
+  padding: 20px;
 }
 
 .App-body {
@@ -65,17 +64,31 @@ body {
   color: var(--violet);
 }
 
+.friends {
+  margin-top: 40px;
+  margin-left: 25px;
+}
+
 .search-bar input {
   border: 1px solid var(--violet);
   border-right: none;
   border-radius: 20px 0 0 20px;
   padding: 10px;
-  margin-top: 150px;
   width: 400px;
+}
+
+.search-bar .visible-tags {
+  border-radius: 20px 0 0 0;
+  border-bottom: none;
 }
 
 .lupa-icon {
   width: 10px;
+}
+
+.loading-icon {
+  width: 200px;
+  margin: 100px;
 }
 
 .btn {
@@ -96,11 +109,31 @@ body {
   border-radius: 0 20px 20px 0px;
 }
 
+.search-bar .btn.btn-search.visible-tags {
+  border-radius: 0px 20px 0 0px; 
+}
+
+.dropdown {
+  border: 1px solid var(--violet);
+  border-radius: 0 0 20px 20px;
+}
+
+.dropdown .tag {
+  border-bottom: 1px solid var(--violet);
+  width: 100%;
+  padding: 10px;
+  font-size: 13px;
+}
+
+.tag:last-child {
+  border-bottom: none;
+}
+
 .gif-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 50px;
+  margin: 50px 0 50px 0;
   background-color: aliceblue;
 }
 
